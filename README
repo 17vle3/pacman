@@ -1,3 +1,33 @@
-Vivian Le
-Linus Ims
-Stanley Zhao
+Q3.
+	Uniform cost search uses a priority queue that returns the lowest cost. 
+This is best suited for it rather than a stack,list, or a queue. If I were to 
+use a list, I would have to search for the lowest cost path. So, python 
+dictionaries are like a struct in C++. According to this source: 
+https://www.w3schools.com/python/python_dictionaries.asp. It is the best way to
+go about this problem because we could get the value of the path really quickly
+by using get rather than creating a separate function ourselves. We could also 
+change the value (ex. adding it), so we can update the cost of our path. We will 
+do this per node so we find the lowest cost path. Compared to BFS and DFS, it’s
+a little bit different because we need the additional code to calculate the path.
+
+There are no questions for Q3.
+
+Q4:
+  A-star search is based on the general search framework of uniform cost search,
+both using the PriorityQueue implemented in util.py. However, A-star also takes 
+advantage of the heuristic function, which we use along with our t_cost variable 
+tracking how far each path has reached from Pac-Man’s starting location to actively 
+calculate the “path of least resistance” or lowest-costing path to the solution. 
+This calculation takes place in our for loop, in which we use all 3 variables 
+returned from calling .getSuccessors on the problem. The algorithm will only 
+continue expanding along it’s current path if that path’s cost is less than or
+equal to the total cost of movement from the starting location plus the cost to
+move to a child node. This should always return the lowest cost node each loop, 
+and will not go too far down an ineffective path such as DFS, or check too many 
+different pathways that will not lead to the goal, such as with BFS. 
+sources:
+https://www.geeksforgeeks.org/a-search-algorithm/
+https://medium.com/@nicholas.w.swift/easy-a-star-pathfinding-7e6689c7f7b2
+https://towardsdatascience.com/a-star-a-search-algorithm-eb495fb156bb
+
+What happens on openMaze for the various search strategies?:
